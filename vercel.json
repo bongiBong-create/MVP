@@ -1,14 +1,12 @@
 {
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://23.111.216.140:8080/api/:path*"
+    },
+    {
       "source": "/:path*",
       "destination": "/index.html"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://23.111.216.140:8080/$1"
     }
   ]
 }
