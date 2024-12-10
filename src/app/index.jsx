@@ -1,15 +1,13 @@
-import { AdminDashboard } from "../pages/admin-dashboard"
-import { ProfileDashboard } from "../pages/profile-dashboard"
-import { SignIn } from "../pages/sign-in"
+import { AuthProvider } from "./context/AuthProvider";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
-function App() {
+import "./global.css";
+
+export const App = () => {
   return (
-    <>
-    <AdminDashboard />
-    <ProfileDashboard />
-    <SignIn />
-    </>
-  )
-}
-
-export default App
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+};

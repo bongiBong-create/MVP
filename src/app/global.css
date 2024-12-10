@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "sus";
+  src: url("./fonts/SuisseIntl-Book.otf");
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  font-family: "sus";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+  height: 100%;
+}
+
+
+ol, ul, li {
+  list-style: none;
+}
+
+button, a {
+  background: transparent;
+  border: 0;
+  border: 1px solid #000;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+}
+
+header {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+section {
+  padding: 20px;
+}
+
+.btn {
+  font-size: 20px;
+  padding: 10px 40px;
+}
+
+.small__btn {
+  font-size: 16px;
+  padding: 5px 10px 0 10px;
+}

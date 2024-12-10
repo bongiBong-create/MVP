@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul{
+  display: flex;
+  gap: 10px;
+}
+
+.nav__btn {
+  font-size: 20px;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+.nav__btn:hover {
+  opacity: 0.5;
+}
