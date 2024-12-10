@@ -19,6 +19,10 @@ export const SignIn = () => {
     setPassword(e.target.value);
   };
 
+  const handleAdmin = () => {
+    navigate("/admin")
+  }
+
   const handleProfile = () => {
     navigate("/profile")
   }
@@ -85,7 +89,7 @@ export const SignIn = () => {
         </div>
 
         <Btn className="btn" onClick={handleProfile}>User</Btn>
-        <Btn className="btn" onClick={handleFormSubmit}>Войти</Btn>
+        <Btn className="btn" onClick={handleAdmin}>Admin</Btn>
       </form>
     </div>
   );
