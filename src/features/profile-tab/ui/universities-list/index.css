@@ -1,0 +1,48 @@
+.universities {
+  flex: 1;
+}
+
+.universities__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.universities__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.university__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-width: 0px 0px 1px 0px;
+  height: 30px;
+}
+
+.add {
+  display: flex;
+  gap: 10px;
+}
+
+.add__input {
+  width: 200px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 0;
+  border: 1px solid #000;
+}
+
+.add__btn {
+  padding: 5px 10px;
+}
+
+.delete {
+  border: 0;
+}

@@ -5,13 +5,13 @@ import { Tabs } from "../../../widgets";
 import "./index.css";
 
 export const AdminDashboard = () => {
-  const [isActive, setIsActive] = useState("profiles")
+  const [isActive, setIsActive] = useState("profiles");
 
   return (
     <>
-      <Header setIsActive={setIsActive}/>
+      <Header setIsActive={setIsActive} />
       <section className="admin">
-      <Tabs isActive={isActive}/>
+        <Tabs isActive={isActive} />
       </section>
     </>
   );

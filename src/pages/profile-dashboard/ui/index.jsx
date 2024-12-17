@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../app/context/AuthProvider";
-import { useEffect, useState } from "react";
 import { ComboBox, HeaderProfile } from "../../../features";
 
 import "./index.css";
 
 export const ProfileDashboard = () => {
-  const { dataUser } = useAuth();
   const navigate = useNavigate();
 
   const handlerLogOut = () => {
@@ -15,7 +12,7 @@ export const ProfileDashboard = () => {
 
   return (
     <>
-        <HeaderProfile onClick={handlerLogOut} />
+      <HeaderProfile onClick={handlerLogOut} />
       <section className="profile">
         <ComboBox />
         <div className="graphic">

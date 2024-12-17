@@ -1,6 +1,6 @@
-import "./index.css"
+import "./index.css";
 
-export const ComboBox = ({ universities }) => {
+export const ComboBox = () => {
   return (
     <div className="combo__box">
       <label htmlFor="university">Выберите университет:</label>

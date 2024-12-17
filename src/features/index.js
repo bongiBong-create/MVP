@@ -1,5 +1,6 @@
-export { Header } from "./ui/header";
-export { ProfileTab } from "./ui/profile-tab";
-export { DataTab } from "./ui/data-tab";
-export { ComboBox } from "./ui/combo-box/ui";
-export { HeaderProfile } from "./ui/header-profile/ui";
+export { Header } from "./header";
+export { ComboBox } from "./combo-box/ui";
+export { HeaderProfile } from "./header-profile/ui";
+export { ProfileTab } from "./profile-tab/ui";
+export { DataTab } from "./data-tab/ui";
+export { SignIn } from "./sign-in/ui";

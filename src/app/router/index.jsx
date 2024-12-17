@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "../../shared";
-import { SignIn } from "../../pages/sign-in";
 import { AdminDashboard } from "../../pages/admin-dashboard";
 import { ProfileDashboard } from "../../pages/profile-dashboard";
+import { AuthorizationPage } from "../../pages/authorization-page/ui";
 
 export const router = createBrowserRouter([
   {
@@ -11,16 +11,16 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <SignIn />,
+        element: <AuthorizationPage />,
       },
       {
         path: "/admin",
-        element: <AdminDashboard />
+        element: <AdminDashboard />,
       },
       {
         path: "/profile",
-        element: <ProfileDashboard />
-      }
+        element: <ProfileDashboard />,
+      },
     ],
   },
 ]);

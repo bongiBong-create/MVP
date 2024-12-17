@@ -1,16 +1,18 @@
-import { useAuth } from "../../../app/context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { API_URL } from "../../../shared";
 
 import { Btn } from "../../../shared/ui/btn";
 
 import "./index.css";
+import { fetchLogIn } from "../model/authSlice";
 export const SignIn = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const { setDataUser } = useAuth();
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleChangeName = (e) => {
     setUserName(e.target.value);
   };
@@ -19,49 +21,17 @@ export const SignIn = () => {
     setPassword(e.target.value);
   };
 
-  const handleAdmin = () => {
-    navigate("/admin")
-  }
-
-  const handleProfile = () => {
-    navigate("/profile")
-  }
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        `${API_URL}/login?username=${username}&password=${password}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    const userData = await dispatch(fetchLogIn({ username, password }));
+    console.log(userData.payload);
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-
-      const userId = data.user_id;
-      const userResponse = await fetch(
-        `http://23.111.216.140:8080/api/users/${userId}`
-      );
-      const userData = await userResponse.json();
-      await setDataUser(userData);
-      if (userData.isAdmin) {
+      if (userData.payload?.isAdmin) {
         navigate("/admin");
       } else {
         navigate("/profile");
       }
-
-    } catch (error) {
-      console.error(error.message);
-    }
   };
 
   return (
@@ -88,8 +58,9 @@ export const SignIn = () => {
           />
         </div>
 
-        <Btn className="btn" onClick={handleProfile}>User</Btn>
-        <Btn className="btn" onClick={handleAdmin}>Admin</Btn>
+        <Btn className="btn" onClick={handleFormSubmit}>
+          Войти
+        </Btn>
       </form>
     </div>
   );

@@ -1,0 +1,34 @@
+.users {
+  flex: 1;
+}
+
+.users__box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.user__form {
+  display: flex;
+  gap: 10px;
+}
+
+.user__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.list__item {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-width: 0px 0px 1px 0px;
+  height: 30px;
+}
