@@ -6,3 +6,9 @@
   align-items: center;
   height: 100%;
 }
+
+.graphic {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -1,4 +1,4 @@
-import { Icons } from "../../../../shared/icons";
+import { Icons } from "../../../../shared/ui/icons";
 import "./index.css";
 
 export const UserList = () => {

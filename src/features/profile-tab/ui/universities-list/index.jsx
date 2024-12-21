@@ -5,8 +5,7 @@ import {
   getUniversities,
 } from "../../model/profileTabSlice";
 import { generateRandomId } from "../../../../shared/utils/randomId";
-
-import { Icons } from "../../../../shared/icons";
+import { Icons } from "../../../../shared/ui/icons";
 
 import "./index.css";
 
