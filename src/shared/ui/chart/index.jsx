@@ -7,29 +7,28 @@ export const Chart = ({ type, values }) => {
 
   if (type === "histogram") {
     return (
-      <Bar
-        style={{ width: "800px" }}
-        options={{
-          indexAxis: "y",
-          scales: {
-            x: {
-              beginAtZero: true,
-              ticks: {
-                stepSize: 10,
+        <Bar
+          options={{
+            indexAxis: "y",
+            scales: {
+              x: {
+                beginAtZero: true,
+                ticks: {
+                  stepSize: 10,
+                },
               },
             },
-          },
-        }}
-        data={{
-          labels: labels,
-          datasets: [
-            {
-              label: "data",
-              data: dataValues,
-            },
-          ],
-        }}
-      />
+          }}
+          data={{
+            labels: labels,
+            datasets: [
+              {
+                label: "data",
+                data: dataValues,
+              },
+            ],
+          }}
+        />
     );
   }
 
