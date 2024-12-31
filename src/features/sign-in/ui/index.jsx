@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { fetchLogIn } from "../model/authSlice";
 
 import { Btn } from "../../../shared/ui/btn";
 
 import "./index.css";
-import { fetchLogIn } from "../model/authSlice";
 export const SignIn = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -25,13 +25,12 @@ export const SignIn = () => {
     e.preventDefault();
 
     const userData = await dispatch(fetchLogIn({ username, password }));
-    console.log(userData.payload);
 
-      if (userData.payload?.isAdmin) {
-        navigate("/admin");
-      } else {
-        navigate("/profile");
-      }
+    if (userData.payload?.isAdmin) {
+      navigate("/admin");
+    } else {
+      navigate("/profile");
+    }
   };
 
   return (

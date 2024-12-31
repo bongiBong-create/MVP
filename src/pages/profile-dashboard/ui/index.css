@@ -10,5 +10,7 @@
 .graphic {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 50px;
+  padding-block: 20px;
 }

@@ -33,7 +33,6 @@ export const fetchLogIn = createAsyncThunk(
       );
       const userData = await userResponse.json();
 
-      console.log(userData);
       return userData;
     } catch (error) {
       console.log(error.message);
@@ -52,7 +51,7 @@ const authSlice = createSlice({
       })
       .addCase(fetchLogIn.fulfilled, (state, action) => {
         state.status = "resolved";
-        state.state = action.payload;
+        state.user = action.payload;
       })
       .addCase(fetchLogIn.rejected, (state, action) => {
         state.status = "rejected";

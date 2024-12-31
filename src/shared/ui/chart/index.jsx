@@ -1,31 +1,63 @@
 import { Chart as ChartJS } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Bar, Doughnut } from "react-chartjs-2";
 
-export const Chart = ({ chartParams }) => {
-  return (
-    <>
+export const Chart = ({ type, values }) => {
+  const labels = values.map((value) => value.name);
+  const dataValues = values.map((value) => value.value);
+
+  if (type === "histogram") {
+    return (
       <Bar
+        style={{ width: "800px" }}
+        options={{
+          indexAxis: "y",
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 10,
+              },
+            },
+          },
+        }}
         data={{
-          labels: ["A", "B", "C"],
+          labels: labels,
           datasets: [
             {
-              label: "My first Dataset",
-              data: chartParams,
+              label: "data",
+              data: dataValues,
             },
           ],
         }}
       />
-      <Doughnut
-        data={{
-          labels: ["A", "B", "C"],
-          datasets: [
-            {
-              label: "My first Dataset",
-              data: chartParams,
+    );
+  }
+
+  if (type === "round") {
+    return (
+      <div style={{ width: "500px" }}>
+        <Doughnut
+          options={{
+            scales: {
+              x: {
+                display: false,
+              },
+              y: {
+                display: false,
+              },
             },
-          ],
-        }}
-      />
-    </>
-  );
+          }}
+          data={{
+            labels: labels,
+            datasets: [
+              {
+                label: "процент",
+                data: dataValues,
+              },
+            ],
+          }}
+        />
+      </div>
+    );
+  }
 };
